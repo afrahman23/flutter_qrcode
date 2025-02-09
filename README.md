@@ -18,27 +18,28 @@ via terminal;
 ### 2. Upgrade the latest pubspec.yaml dependency;
 - `flutter pub add qr_code_scanner`
 - `flutter pub add http`
+
+### 3. In the `gradle-wrapper.properties` file, the Gradle version, must be upgraded to version `gradle-8.10`, because my java version `openjdk 23.0.2 2025-01-21`.
+- Add this in the `gradle-wrapper.properties` file: `distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-all.zip`
 - `flutter clean\nflutter pub get`
 - `flutter run`
 
-### 3. Upgrade the latest pubspec.yaml dependency;
-- in the `gradle-wrapper.properties` file, the Gradle version, must upgrade to version `gradle-8.10`, according to the installed java version `openjdk 23.0.2 2025-01-21`.
-  `distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-all.zip`
-- this issue is frustrating. about `namespace` between `AndroidManifest.xml` and `build.gradle` in the `qr_code_scanner` package.;
-                `What went wrong:
-                A problem occurred configuring project ':qr_code_scanner'.
+### 4. This issue about `namespace` between `AndroidManifest.xml` and `build.gradle` in the `qr_code_scanner` package.
+On debug mode:
+`What went wrong:
+A problem occurred configuring project ':qr_code_scanner'.
+Could not create an instance of type com.android.build.api.variant.impl.LibraryVariantBuilderImpl. 
+Namespace not specified. Specify a namespace in the module's build file. See https://d.android.com/r/tools/upgrade-assistant/set-namespace for information about setting the namespace. 
+If you've specified the package attribute in the source AndroidManifest.xml, you can use the AGP Upgrade Assistant to migrate to the namespace value in the build file. Refer to https://d.android.com/r/tools/upgrade-assistant/agp-upgrade-assistant for general information about using the AGP Upgrade Assistant.`
 
-                Could not create an instance of type com.android.build.api.variant.impl.LibraryVariantBuilderImpl.
-                Namespace not specified. Specify a namespace in the module's build file. See https://d.android.com/r/tools/upgrade-assistant/set-namespace for information about setting the namespace.
-                If you've specified the package attribute in the source AndroidManifest.xml, you can use the AGP Upgrade Assistant to migrate to the namespace value in the build file. Refer to https://d.android.com/r/tools/upgrade-assistant/agp-upgrade-assistant for general information about using the AGP Upgrade Assistant.`
-  
--  The solution is to add the `patch-1` to the `pubspec.yaml` file.
-          qr_code_scanner:
-          git:
-          url: https://github.com/asmrtfm/qr_code_scanner
-          ref: patch-1
-          version: ^1.0.0
-- Then, `rm -rf ~/.pub-cache/` `flutter clean` `flutter pub get` `rm -rf build/` `flutter run` again.
+The solution is to add the `patch-1` to the `pubspec.yaml` file.
+`qr_code_scanner:
+git:
+url: https://github.com/asmrtfm/qr_code_scanner
+ref: patch-1
+version: ^1.0.0`
+
+Then, `rm -rf ~/.pub-cache/` `flutter clean` `flutter pub get` `rm -rf build/` `flutter run` again.
 
 ## References:
 - https://github.com/abdazzamajhari/qr_safe
