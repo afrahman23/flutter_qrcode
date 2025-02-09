@@ -1,5 +1,5 @@
-# flutter_qrcode (6FEB25)
-Source code from my lecture about QRCode in Flutter
+# flutter_qrcode
+Source code from my lecture about [QRCode in Flutter](https://github.com/abdazzamajhari/qr_safe) on 6th February 2025.
 📝 source: Sesi 14, Abdul Azzam Ajhari, S.Kom., M.Kom. 
 
 Thank you pak perkenalan Flutter-nya.
@@ -41,6 +41,7 @@ via terminal;
 - And then, `rm -rf ~/.pub-cache/` `flutter clean` `flutter pub get` `rm -rf build/` `flutter run` again.
 
 ## References:
+- https://github.com/abdazzamajhari/qr_safe
 - https://docs.gradle.org/current/userguide/gradle_wrapper.html
 - https://docs.gradle.org/current/userguide/compatibility.html#java_runtime
 - https://github.com/juliuscanute/qr_code_scanner/issues/744
