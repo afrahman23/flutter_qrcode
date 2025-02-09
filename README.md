@@ -4,7 +4,7 @@ Source code from my lecture about [QRCode in Flutter](https://github.com/abdazza
 
 Thank you pak perkenalan Flutter-nya.
 
-## Instal & Troubeshoot
+## Instal & Troubleshoot
 Following the instructions in session 14, here are the results on my Mac.
 via terminal;
 ### 1. Make sure basic flutter is running normally & devices are connected;
@@ -19,12 +19,12 @@ via terminal;
 - `flutter pub add qr_code_scanner`
 - `flutter pub add http`
 
-### 3. In the `gradle-wrapper.properties` file, the Gradle version, must be upgraded to version `gradle-8.10`, because my java version `openjdk 23.0.2 2025-01-21`.
+### 3. In the `gradle-wrapper.properties` file, the Gradle version must be upgraded to version `gradle-8.10`, because my java is version `openjdk 23.0.2 2025-01-21`.
 - Add this in the `gradle-wrapper.properties` file: `distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-all.zip`
 - `flutter clean\nflutter pub get`
 - `flutter run`
 
-### 4. This issue about `namespace` between `AndroidManifest.xml` and `build.gradle` in the `qr_code_scanner` package.
+### 4. This issue is about the `namespace` between `AndroidManifest.xml` and `build.gradle` in the `qr_code_scanner` package.
 On debug mode:
 `What went wrong:
 A problem occurred configuring project ':qr_code_scanner'.
