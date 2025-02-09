@@ -9,7 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  qr_code_scanner: ^1.0.0
+  qr_code_scanner:
+    git:
+      url: https://github.com/asmrtfm/qr_code_scanner
+      ref: patch-1
+      version: ^1.0.0
   http: ^0.13.0
 
 dev_dependencies:

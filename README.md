@@ -33,11 +33,11 @@ via terminal;
                 If you've specified the package attribute in the source AndroidManifest.xml, you can use the AGP Upgrade Assistant to migrate to the namespace value in the build file. Refer to https://d.android.com/r/tools/upgrade-assistant/agp-upgrade-assistant for general information about using the AGP Upgrade Assistant.`
 - 
     the solution is to add the `patch-1` in the `pubspec.yaml` file.
-``          qr_code_scanner:
+``````          qr_code_scanner:
           git:
           url: https://github.com/asmrtfm/qr_code_scanner
           ref: patch-1
-          version: ^1.0.0```
+          version: ^1.0.0```````
 - And then, `rm -rf ~/.pub-cache/` `flutter clean` `flutter pub get` `rm -rf build/` `flutter run` again.
 
 ## References:
