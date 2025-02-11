@@ -26,18 +26,22 @@ via terminal;
 
 ### 4. This issue concerns the `namespace` between `AndroidManifest.xml` and `build.gradle` in the `qr_code_scanner` package.
 On debug mode:
-``What went wrong:
+```terminal
+What went wrong:
 A problem occurred configuring project ':qr_code_scanner'.
 Could not create an instance of type com.android.build.api.variant.impl.LibraryVariantBuilderImpl. 
 Namespace not specified. Specify a namespace in the module's build file. See https://d.android.com/r/tools/upgrade-assistant/set-namespace for information about setting the namespace. 
-If you've specified the package attribute in the source AndroidManifest.xml, you can use the AGP Upgrade Assistant to migrate to the namespace value in the build file. Refer to https://d.android.com/r/tools/upgrade-assistant/agp-upgrade-assistant for general information about using the AGP Upgrade Assistant.``
+If you've specified the package attribute in the source AndroidManifest.xml, you can use the AGP Upgrade Assistant to migrate to the namespace value in the build file. Refer to https://d.android.com/r/tools/upgrade-assistant/agp-upgrade-assistant for general information about using the AGP Upgrade Assistant.
+```
 
 ### 5. The solution is to add the `patch-1` to the `pubspec.yaml` file.
-``qr_code_scanner:
+```yaml
+qr_code_scanner:
 git:
 url: https://github.com/asmrtfm/qr_code_scanner
 ref: patch-1
-version: ^1.0.0``
+version: ^1.0.0
+```
 
 Then,
 - `rm -rf ~/.pub-cache/`
@@ -47,7 +51,12 @@ Then,
 - `flutter run` again.
 
 ## References:
+- https://docs.flutter.dev/tools/android-studio
 - https://github.com/abdazzamajhari/qr_safe
+- https://pub.dev/packages/qr_code_scanner
+- https://pub.dev/packages/http
 - https://docs.gradle.org/current/userguide/gradle_wrapper.html
 - https://docs.gradle.org/current/userguide/compatibility.html#java_runtime
+- https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/#what-is-usrlibexecjava-home
 - https://github.com/juliuscanute/qr_code_scanner/issues/744
+- https://www.the-qrcode-generator.com/
