@@ -44,7 +44,7 @@ Namespace not specified. Specify a namespace in the module's build file. See htt
 If you've specified the package attribute in the source AndroidManifest.xml, you can use the AGP Upgrade Assistant to migrate to the namespace value in the build file. Refer to https://d.android.com/r/tools/upgrade-assistant/agp-upgrade-assistant for general information about using the AGP Upgrade Assistant.
 ```
 
-### 5. The solution is to change the `qr_code_scanner` in the `pubspec.yaml` file. This issue is given a solution by [vshvedov](https://github.com/vshvedov/). Thank you.
+### 5. The solution is to change the `qr_code_scanner` in the `pubspec.yaml` file. This issue has been solved by [vshvedov](https://github.com/vshvedov/). Thank you.
 ```yaml
 qr_code_scanner:
 git:
