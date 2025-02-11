@@ -11,16 +11,24 @@ via terminal;
 - `flutter doctor --android-licenses`
 - `flutter doctor -v`
 - `flutter devices`
-  Found 3 connected devices:
+```terminal
+Found 3 connected devices:
   SM A235F (mobile) • RRXXXXXXX1W • android-arm64  • Android 14 (API 34)
   <- My Samsung has been detected
+```
 
 ### 2. Upgrade the latest pubspec.yaml dependency;
 - `flutter pub add qr_code_scanner`
 - `flutter pub add http`
 
 ### 3. In the `gradle-wrapper.properties` file, the Gradle version must be upgraded to version `gradle-8.10`, because my java is version `openjdk 23.0.2 2025-01-21`.
-- Add this in the `gradle-wrapper.properties` file: `distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-all.zip`
+- Add this in the `gradle-wrapper.properties` file:
+```properties
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-all.zip
+```
+
+Then,
+- `flutter clean`
 - `flutter clean\nflutter pub get`
 - `flutter run`
 
