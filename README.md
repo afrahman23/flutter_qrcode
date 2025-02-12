@@ -79,7 +79,7 @@ FAILURE: Build failed with an exception.
 ```terminal
 cd android
 ./gradlew clean
-./gradlew wrapper --gradle-version 6.0.1
+./gradlew wrapper --gradle-version 8.10
 ./gradlew -v   # to download the new version
 cd ..
 flutter clean
