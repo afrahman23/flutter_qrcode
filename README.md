@@ -60,6 +60,32 @@ Then,
 - `rm -rf build/`
 - `flutter run` again.
 
+
+
+### 6. This issue concerns the `':app:compileDebugJavaWithJavac'`
+On debug mode:
+```terminal
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+  Could not determine the dependencies of task ':app:compileDebugJavaWithJavac'.
+> Could not resolve all dependencies for configuration ':app:debugCompileClasspath'.
+> Problems reading data from Binary store in /tmp/gradle1514867895156133686.bin offset 618452 exists? true
+
+* Try:
+  Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+```
+
+```terminal
+cd android
+./gradlew clean
+./gradlew wrapper --gradle-version 6.0.1
+./gradlew -v   # to download the new version
+cd ..
+flutter clean
+flutter run   # might take 15 - 20mins for the first time
+```
+
 ## References:
 - https://docs.flutter.dev/tools/android-studio
 - https://github.com/abdazzamajhari/qr_safe
@@ -70,3 +96,4 @@ Then,
 - https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/#what-is-usrlibexecjava-home
 - https://github.com/juliuscanute/qr_code_scanner/issues/744
 - https://www.the-qrcode-generator.com/
+- https://github.com/flutter/flutter/issues/85972

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+// import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(const MyApp());
 
@@ -94,7 +95,7 @@ class _QRViewExampleState extends State<QRViewExample> {
   }
 
   Future<void> _checkWithVirusTotal(String url) async {
-  const apiKey = 'YOUR_API_KEY';
+  const apiKey = '521f185022b1e6302d6c468e6609239398e2cc777f064da838a59c051078b5c3';
   final encodedUrl = base64Url.encode(utf8.encode(url)).replaceAll('=', '');  // Encode and remove padding
   final apiUrl = 'https://www.virustotal.com/api/v3/urls/$encodedUrl';
 
