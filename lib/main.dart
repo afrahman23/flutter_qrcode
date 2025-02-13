@@ -116,8 +116,13 @@ class _QRViewExampleState extends State<QRViewExample> {
         context: context,
         builder: (_) => AlertDialog(
           title: const Text('VirusTotal Result'),
-content: Text('Scan Result: ${scanResult.toString()}${scanResult['malicious'] == 0 ? ' (Safe)' : ''}'),
+          content: Text('Scan Result: ${scanResult.toString()}${scanResult['malicious'] == 0 ? ' (Safe)' : ''}'),
           actions: <Widget>[
+            if (scanResult['malicious'] == 0)
+              ElevatedButton(
+                onPressed: () => _launchUrl(result!.code!),
+                child: const Text('Url ini aman, silahkan buka'),
+              ),
             TextButton(
               child: const Text('OK'),
               onPressed: () {
@@ -125,6 +130,7 @@ content: Text('Scan Result: ${scanResult.toString()}${scanResult['malicious'] ==
               },
             ),
           ],
+
         ),
       );
     } else {
@@ -158,5 +164,12 @@ content: Text('Scan Result: ${scanResult.toString()}${scanResult['malicious'] ==
   void dispose() {
     controller?.dispose();
     super.dispose();
+  }
+}
+
+Future<void> _launchUrl(String url) async {
+  final Uri _url = Uri.parse(url);
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
   }
 }
