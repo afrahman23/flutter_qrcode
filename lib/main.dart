@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(const MyApp());
 
@@ -116,7 +116,7 @@ class _QRViewExampleState extends State<QRViewExample> {
         context: context,
         builder: (_) => AlertDialog(
           title: const Text('VirusTotal Result'),
-          content: Text('Scan Result: ${scanResult.toString()}'),
+content: Text('Scan Result: ${scanResult.toString()}${scanResult['malicious'] == 0 ? ' (Safe)' : ''}'),
           actions: <Widget>[
             TextButton(
               child: const Text('OK'),
